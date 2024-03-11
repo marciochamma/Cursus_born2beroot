@@ -1,0 +1,31 @@
+
+O que é uma máquina virtual?
+Software que simula um sistema e pode executar programas como se fosse um computador real. Permite a criação de múltiplos ambientes simulados ou recursos dedicados a partir de um único sistema de hardware físico.
+
+Qual é a finalidade das máquinas virtuais?
+Visa fornecer uma plataforma de hardware e um ambiente de execução independente do sistema operacional, que esconde os detalhes da plataforma subjacente e permite que um programa seja sempre executado da mesma forma em qualquer plataforma.
+
+O que é LVM?
+É um gestor de volume lógico. Fornece um método de atribuição de espaço em dispositivos de armazenamento de massa, que é mais flexível do que os esquemas convencionais de partição para armazenamento de volumes.
+
+Diferença entre Debian e Rocky
+> Debian focada na comunidade de desenvolvedores, com mais atualizações. Rocky focada na comunidade empresarial com confiabilidade.
+> Debian possui um repositório de pacotes vasto e diversificado. O Rocky Linux se concentra principalmente em fornecer pacotes que sejam compatíveis com o Red Hat Enterprise Linux.
+> Debian tem mais materiais de suporte que o Rocky.
+
+Diferenças entre apt e aptitude
+> Apt é uma ferramanta padrão do Debian. O Aptitude roda em cima do apt.
+> Apt tem uma interface de comandos. O Aptitude pode ter uma interface visual.
+> Apt nao corrige potenciais erros. O Aptitude sugere sugestao de resoluções.
+> APT é um gestor de pacotes de nível inferior e aptitude é um gestor de pacotes de nível superior.
+> O Aptitude oferece uma melhor funcionalidade em comparação com o apt-get. Ambos são capazes de fornecer os meios necessários para efectuar a gestão de pacotes.
+
+O que é APPArmor?
+Um módulo de segurança no kernel do Linux que permite ao administrador do sistema restringir as capacidades de um programa.
+O AppArmour usa o paradigma de controle de acesso obrigatório para aprimorar a segurança das distribuições Linux. Ele conta com o Linux Security Subsystem Module para limitar o comportamento de aplicativos individuais de acordo com as políticas definidas pelo administrador.
+
+Fontes
+> German: https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_POR.md
+> Carol: https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/Debian-en.md
+> Pasquale: https://github.com/pasqualerossi/Born2BeRoot-Guide
+> Iuri: https://github.com/iuryr/born2beroot/blob/master/monitoring.sh

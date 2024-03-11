@@ -1,0 +1,12 @@
+
+Generate a signature
+# cd VirtualBox\ VMs (go to Virtual Box folder)
+# ls (visualize the folder <virtual_machine>)
+# cd <virtual_machine> (go to VM folder)
+# sha1sum <virtual_machine_name>.vdi (generate the signature using sha1sum. It takes a few minutes)
+Example of output 4f9a0cdd574046352091473acf50c5f101722424  Born2beRoot.vdi
+Finaly, create a file signature.txt with output and submit to evaluation
+
+Attention
+Before start the evaluation, save state by snapshot, because VM will be modified and signature can be modified too.
+After the evaluation, restore the Original State for next evaluation.

@@ -1,0 +1,101 @@
+> Install VM Connection
+
+Apt vs Aptitude
+Choose between system to manage the packages on Linux Debian. I chose Apt.
+- Apt is the default Linux tool. Aptitude is can use over Apt.
+- Apt offers a command-line interface, while aptitude offers a visual interface
+- When facing a package conflict, Apt will not fix the issue while Aptitude will suggest a resolution that can do the job
+- Aptitude can interactively retrieve and displays the Debian changelog of all available official packages
+
+
+Sudo
+Is a program that enables users to run programs with the security privileges of another user, by default the superuser.
+
+Install Sudo
+# su (switch user to root - attention to use always the root user)
+# sudo --version (check if sudo is already installed)
+# apt install sudo (install sudo)
+# sudo reboot (refresh system changes)
+
+Add Group and Add User to Group
+# sudo adduser mchamma (check if user marcio already exists)
+# sudo addgroup user42 (create the group user42, according to project request)
+# sudo adduser mchamma user42 (add the user marcio to group user42)
+# getent group user42 (check the users in group user42)
+The group "sudo" is created by default when sudo is installed
+# sudo adduser mchamma sudo (add the user marcio to group sudo)
+# getent group sudo (check the users in group sudo)
+
+After big changes refresh the VM
+# sudo apt update
+
+
+Vim
+Is a free and open-source, screen-based text editor program.
+
+Install Vim
+# vim --version (check if vim is already installed)
+# sudo apt install vim -y (install vim)
+
+
+SSH
+Also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network. SSH also refers to the suite of utilities that implement the SSH protocol. Secure Shell provides strong password authentication and public key authentication, as well as encrypted data communications between two computers connecting over an open network, such as the internet.
+
+Install SSH
+# sudo apt install openssh-server -y (install ssh)
+# sudo service ssh status (check status ssh and if it's enabled)
+
+If SSH is not enabled
+# systemctl start sshd
+# systemctl enable sshd
+
+Change the default Port 22 to 4242
+# sudo vim /etc/ssh/sshd_config (open vim to edit the file sshd_config)
+  Change: #Port 22 -> Port 4242
+# sudo grep Port /etc/ssh/sshd_config (check if Port was changed)
+
+Change the Permition to login with root
+# sudo vim /etc/ssh/sshd_config (open vim to edit the file sshd_config)
+  Change: #PermitRootLogin prohibit-password -> PermitRootLogin no
+# sudo grep PermitRootLogin /etc/ssh/sshd_config (check if Permition was changed)
+
+After changes, restart the ssh
+# sudo service ssh restart (restart ssh)
+# sudo service ssh status (check status ssh with new port)
+
+
+UFW
+The Uncomplicated Firewall (UFW) is a command-line firewall abstraction layer that automatically uses either iptables or nftables as a back-end firewall. UFW is a tool that minimizes the effort of setting up a firewall by starting with an optimal default configuration.
+
+Install UFW
+# sudo apt install ufw -y (install ufw)
+# sudo ufw enable (enable ufw)
+
+Open Port 4242
+# sudo ufw status numbered (check the ports)
+# sudo ufw allow 4242 (create the ports 4242)
+# sudo ufw status numbered (check the creation of ports 4242)
+
+
+AppArmor
+Mandatory Access Control (or MAC) is a security protocol that forbids any certain program, even one running on effective superuser privileges, to do anything other than what it was previously allowed to do. It is a secure measure used, mainly, in systems where stability and protection are paramount concepts (such as server units).
+To enforce MAC, we can use a variety of programs. For Debian and all its similar systems, the default option is AppArmor. It enforces protection over objects as per configuration. That means, the application "imunizes" other apps one by one. By default, something that has not been previously set as "protected" is, by all means, vulnerable.
+
+Install AppArmor
+# apt install apparmor (install the apparmor)
+# sudo aa-status (check the status of apparmor)
+# systemctl enable apparmor
+
+
+Testing the SSH connection
+
+Configure VM
+In Settings > Network > Adapter 1 > Attached to = Bridged Adapter
+  Settings > Network > Adapter 1 > Advanced > Allow VMs
+# sudo reboot (refresh system changes)
+
+Check the user IP Address
+# ip addr show (check ip address of user)
+
+In computer terminal
+# ssh mchamma@10.12.200.148 -p 4242 (check user and ip address)

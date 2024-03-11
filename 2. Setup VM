@@ -1,0 +1,125 @@
+> Setup the Virtual Machine
+
+Step 1: After click on Start, the VM settings will pop up
+
+Step 2: Select Install (not Graphical Install).
+
+Step 3: Select language default English
+
+Step 4: Select the current location Other > South America > Brazil > United States -en_US.UTF-8
+
+Step 5: Select the keyboard configuration Brazilian
+
+Step 6: Wait for automatic configuration
+
+Step 7: Write a hostname usename + 42 (The hostname of your virtual machine must be your login ending with 42). Mandatory mchamma42
+
+Step 8: Write a domain name as empty. Just click on continue.
+
+Step 9: Write a Root password as anything. Sugestion root42
+
+Step 10: Re-write the same as Root password above.
+
+Step 11: Write the full name Marcio Chamma
+
+Step 12: Write the username. Mandatory mchamma
+
+Step 13: Write a User password. Sugestion pass42
+
+Step 14: Configure the clock using the current location São Paulo
+
+Step 15: Wait for automatic configuration
+
+Step 16: In order to make the disk partition according to Bonus part of the project, select the partitioning method Manual
+
+Step 17: Select the hard disk to partition SCSI2 (0,0,0) (sda) - 8.6GB ATA VBOX HARDDISK
+
+Step 18: Confirm Yes for selection the entire partition
+
+Step 19: Select the available free space to create the boot partition pri/log 8.6GB FREE SPACE
+
+Step 20: Select Create a new partition
+
+Step 21: Write the new partition size. In case of boot partition should be reserved 500MB
+
+Step 22: Select the type for the new partition Primary
+
+Step 23: Select the location for the new partition Beginning
+
+Step 24: Before complete this partition, set the mount point as /boot and the Bootable flag as on, and then Done setting up the partition
+
+Step 25: Select the remaining available free space to create the boot partition pri/log 8.1GB FREE SPACE
+
+Step 26: Select Create a new partition
+
+Step 27: Write the new partition size. In case of Logical Volume partition should be reserved the rest: max
+
+Step 28: Select the type for the new partition Logical
+
+Step 29: Before complete this partition, set the mount point as "Do not mount it", and then Done setting up the partition
+
+Step 30: Next step is encrypt the Logical Volume. Select Configure encrypted volumes. According to the project only the Logical Volume must be encrypted. The boot partition must not.
+
+Step 31: During the encryptation, the system warns about the changes that cant be undone. Select Yes in these cases.
+
+Step 32: In encryption configuration actions, select Create encrypted volumes
+
+Step 33: In devices to encrypt, select only the space for logical volume
+
+Step 34: In partition settings, select Done setting up the partition
+
+Step 35: In encryption configuration actions, select Finish
+
+Step 36: The system will request to overwritten the current data with a randon data. Select Yes
+
+Step 37: Wait for overwritten the current data
+
+Step 38: Write a encryption passphrase. Suggestion oratoroeuaroupadoreideroma
+
+Step 39: Next step is to configure the Logical Volume.
+  Select Configure the Logical Volume Manager
+
+Step 40: Accept the alert about changes cant be undone after configure the LVM.
+
+Step 41: Select "Create Volume Group"
+
+Step 42: Write the Volume group name. Suggestion LVGroup
+
+Step 43: Select the Device for the new volume group : Logical Volume SDA5
+
+Step 44: Select Create Logical Volume
+
+Step 45: Select the group where the new logical volume will be created : LVGroup
+
+Step 46: Write the Logical volume name and size, according to table below 
+  Find the LV's size according to the project. Total 8 gb
+	> root = 2668 mb
+	> swap = 613 mb
+	> home = 1333 mb
+	> var = 800 mb
+	> srv = 800 mb
+	> tmp = 800 mb
+	> var-log = 1069 mb
+
+Step 47: After set the name and the size of all logical volumes, check if they are correct in Display Configuration Details. If it's ok, select Finish.
+
+Step 48: Now, adjust the partition settings, for all LV use as ext4 journaling file system. The exception is the swap that use as swap area. And adjust the mount point specific for each LV. Attention the LV var-log should be inserted manually /var/log.
+After complete the adjustment of each Logical Volume, select Done setting up the partition.
+
+Step 49: Attention if the selections were made correctly. After that, select Finish partitioning and write changes to disk and select Yes to continue with the changes.
+
+Step 50: Select No for extra installation media, because it's possible to make it after.
+
+Step 51: Select the country: Brazil
+
+Step 52: Select the archive mirror official deb.debian.org
+
+Step 53: Leave the proxy empty. Just click on continue.
+
+Step 54: Not necessary to attempt to survey
+
+Step 55: According to the project, remove all pre selected systems to be installed.
+
+Step 56: Accept instalation of GRUB Boot Loader. The device boot loader should be /dev/sda (ata-VBOX_HARDDISK_...)
+
+Step 57: To finalize, select Continue to Reeboot

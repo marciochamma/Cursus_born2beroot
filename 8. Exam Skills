@@ -1,0 +1,52 @@
+
+Check if graphic interface
+# ls /usr/bin/*session
+Result: if return /usr/bin/dbus-run-session, then No.
+
+Check Operational System
+# uname -v
+
+Check the partitions
+# lsblk
+
+Check if Sudo is installed
+# sudo --version
+
+Check if UFW is active
+# sudo ufw status
+Result: Status must be ative
+
+Check the open ports by firewall
+# sudo ufw status numbered
+
+Check if SSH is active
+# sudo service ssh status
+Result: Status must be ative
+
+Check the hostname
+# hostname
+
+Change the hostname
+# hostnamectl set-hostname <new_hostname>
+
+Add a user
+# sudo adduser <new_user>
+
+Remove a user
+# sudo deluser <del_user>
+
+Add a usergroup
+# sudo addgroup <new_group>
+
+Add a new user to the group
+# sudo adduser <new_user> <new_group>
+
+Check if user is the groups user42 and sudo
+# getent <user> <group>
+
+Check the rules for sudo
+# cat /etc/sudoers.d/sudo_config
+
+Check the sudo input / outputs
+# cd /var/log/sudo
+# ls

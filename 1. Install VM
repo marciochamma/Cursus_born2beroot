@@ -1,0 +1,34 @@
+> Download the Virtual Machine
+
+Step 1:	Before install the VM, it's necessary to download the latest version of Operational System Debian: https://www.debian.org/download
+
+Step 2:	Select the last version with the pattern: debian-xx.x.x-amd64-netinst.iso
+
+
+> Install the Virtual Machine
+
+Step 1: To install the VM, open the Oracle Virtual Box Manager, click on New.
+
+Step 2: Add the Name, adjust the Machine Folder to folder you want to put your VM, adjust Type to Linux, Version Debian (64-bit) and click on Next.
+
+Step 3: Set the Memory Size as 1024MB and then click on Next.
+
+Step 4: Choose the option Create a virtual hard disk now and click on Create. Don't worry. The hard disk size will be set later.
+
+Step 5: Choose the option VDI (VirtualBox Disk Image) and then click on Next.
+
+Step 6: Choose the option Dynamically allocated and click on Next.
+
+Step 7: Set the hard disk size as 8GB.
+
+Step 8: The VM storage was created, now add the VM controller. Click on Settings.
+
+Step 9: A new window will pop up. Click on Storage.
+
+Step 10: After click on Storage, click on blue disc icon located under the Controller: IDE
+
+Step 11: After click on blue disk icon, click on the other blue disk icon located in Attributes, on the right side of Optical Drive.
+
+Step 12: Select "Choose a disk file.." and select the VM downloaded before (.iso) and then click on OK.
+
+Step 13: After add the VM controller, just click on Start
